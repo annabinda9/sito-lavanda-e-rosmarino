@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavanda e Rosmarino — Agriturismo diffuso in Liguria</title>
+<meta name="description" content="Agriturismo diffuso tra la campagna di Pietrabruna e il mare di San Lorenzo al Mare. Benessere, orto, api e miele, degustazioni.">
+
+<!-- ============================================================
+     FONT — caricati da Google Fonts (gratis, nessun account)
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   PALETTE — lavanda + rosmarino
+   ============================================================ */
+:root{
+  --lavanda:      #8b7aa8;   /* viola tenue */
+  --lavanda-soft: #d8cfe4;
+  --rosmarino:    #6b7d63;   /* verde salvia */
+  --rosmarino-dk: #4a5743;
+  --crema:        #f6f4ee;   /* sfondo caldo */
+  --crema-dk:     #ece8dd;
+  --inchiostro:   #2f2e2b;   /* testo */
+  --mare:         #5a7d8c;   /* azzurro per la sezione Blue */
+  --mare-soft:    #cfdde2;
+  --miele:        #c98f3c;   /* accento miele */
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',sans-serif;
+  color:var(--inchiostro);
+  background:var(--crema);
+  line-height:1.65;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:400;line-height:1.1}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-family:'Outfit',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.28em;
+  font-size:.72rem;
+  font-weight:500;
+  color:var(--rosmarino);
+}
+
+/* ============================================================
+   NAVIGAZIONE
+   ============================================================ */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(246,244,238,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--crema-dk);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{font-family:'Fraunces',serif;font-size:1.35rem;letter-spacing:.01em}
+.brand span{color:var(--lavanda)}
+.menu{display:flex;align-items:center;gap:30px;list-style:none}
+.menu a{font-size:.92rem;font-weight:400;transition:color .25s;position:relative}
+.menu a:hover{color:var(--lavanda)}
+
+/* sottomenu Ospitalità */
+.has-sub{position:relative}
+.sub{
+  position:absolute;top:130%;left:50%;transform:translateX(-50%);
+  background:#fff;border:1px solid var(--crema-dk);border-radius:14px;
+  padding:10px;min-width:230px;
+  box-shadow:0 18px 40px rgba(47,46,43,.12);
+  opacity:0;visibility:hidden;transition:.25s;list-style:none;
+}
+.has-sub:hover .sub{opacity:1;visibility:visible;top:115%}
+.sub li a{display:block;padding:11px 14px;border-radius:9px;font-size:.9rem}
+.sub li a:hover{background:var(--crema)}
+.sub .tag{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:1px}
+.sub .green .tag{color:var(--rosmarino)}
+.sub .blue .tag{color:var(--mare)}
+
+.burger{display:none;background:none;border:0;cursor:pointer;font-size:1.5rem;color:var(--inchiostro)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:88vh;display:flex;align-items:center;
+  /* IMMAGINE DI SFONDO HERO — carica un file chiamato hero.jpg nella cartella immagini.
+     Suggerimento: una foto di campi di lavanda al tramonto, o l'orto con il mare sullo sfondo. -->*/
+  background:
+    linear-gradient(180deg,rgba(47,46,43,.15),rgba(47,46,43,.45)),
+    url('immagini/hero.jpg') center/cover no-repeat,
+    linear-gradient(135deg,var(--lavanda-soft),var(--rosmarino));
+}
+.hero-inner{color:#fff;max-width:680px}
+.hero .eyebrow{color:var(--lavanda-soft)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);margin:.3em 0 .35em;font-weight:300}
+.hero h1 em{font-style:italic;color:var(--lavanda-soft)}
+.hero p{font-size:1.18rem;font-weight:300;max-width:520px;opacity:.95}
+.hero .cta{
+  display:inline-block;margin-top:34px;padding:15px 34px;
+  background:var(--crema);color:var(--inchiostro);border-radius:50px;
+  font-weight:500;font-size:.95rem;transition:.25s;
+}
+.hero .cta:hover{background:#fff;transform:translateY(-2px)}
+
+/* ============================================================
+   SEZIONI GENERICHE
+   ============================================================ */
+section{padding:110px 0}
+.section-head{max-width:640px;margin-bottom:60px}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);margin:.25em 0 .5em}
+.section-head p{font-size:1.1rem;color:#54534f}
+
+/* ---- L'IDEA ---- */
+.idea{background:var(--crema-dk)}
+.idea-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.idea-text h2 em{font-style:italic;color:var(--lavanda)}
+.idea-text p{margin-bottom:18px;color:#4a4945;font-size:1.05rem}
+.idea-img{
+  border-radius:18px;overflow:hidden;aspect-ratio:4/5;
+  background:var(--lavanda-soft) url('immagini/idea.jpg') center/cover no-repeat;
+  box-shadow:0 24px 50px rgba(47,46,43,.14);
+}
+
+/* ---- ESPERIENZE / BENESSERE ---- */
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:14px}
+.exp-card{
+  background:#fff;border:1px solid var(--crema-dk);border-radius:16px;
+  padding:34px 28px;transition:.3s;
+}
+.exp-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(47,46,43,.10)}
+.exp-card .icon{font-size:1.9rem;margin-bottom:14px}
+.exp-card h3{font-size:1.3rem;margin-bottom:10px}
+.exp-card p{color:#54534f;font-size:.98rem}
+
+/* ---- OSPITALITÀ: GREEN & BLUE ---- */
+.host{background:var(--crema-dk)}
+.host-block{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-radius:20px;overflow:hidden;margin-bottom:34px;
+  box-shadow:0 18px 44px rgba(47,46,43,.10);background:#fff;
+}
+.host-block.flip .host-media{order:2}
+.host-media{min-height:380px}
+.green .host-media{background:var(--rosmarino) url('immagini/green.jpg') center/cover no-repeat}
+.blue  .host-media{background:var(--mare) url('immagini/blue.jpg') center/cover no-repeat}
+.host-body{padding:54px 48px;align-self:center}
+.host-body .label{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.green .host-body .label{color:var(--rosmarino)}
+.blue  .host-body .label{color:var(--mare)}
+.host-body h3{font-size:2.1rem;margin:.3em 0 .5em}
+.host-body p{color:#4a4945;margin-bottom:16px}
+.host-body ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.host-body li{
+  font-size:.85rem;padding:7px 15px;border-radius:50px;
+  background:var(--crema);border:1px solid var(--crema-dk);
+}
+
+/* ---- CONTATTI ---- */
+.contatti{background:var(--rosmarino-dk);color:var(--crema)}
+.contatti .eyebrow{color:var(--lavanda-soft)}
+.contatti h2{color:#fff;font-size:clamp(2rem,4vw,2.8rem);margin:.25em 0 .6em}
+.cont-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;margin-top:30px}
+.form-field{margin-bottom:18px}
+.form-field label{display:block;font-size:.85rem;margin-bottom:6px;opacity:.85}
+.form-field input,.form-field textarea{
+  width:100%;padding:13px 16px;border:0;border-radius:10px;
+  font-family:inherit;font-size:.95rem;background:rgba(255,255,255,.95);color:var(--inchiostro);
+}
+.form-field textarea{resize:vertical;min-height:110px}
+.send{
+  margin-top:8px;padding:14px 36px;border:0;border-radius:50px;cursor:pointer;
+  background:var(--lavanda);color:#fff;font-family:inherit;font-weight:500;font-size:.95rem;transition:.25s;
+}
+.send:hover{background:#7a6a96}
+.cont-info p{margin-bottom:14px;opacity:.92}
+.cont-info strong{display:block;font-family:'Fraunces',serif;font-size:1.05rem;font-weight:500;margin-bottom:2px;color:#fff}
+.map{
+  margin-top:22px;border-radius:14px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.2);
+}
+.map iframe{width:100%;height:240px;border:0;display:block}
+
+/* ---- FOOTER ---- */
+footer{background:var(--inchiostro);color:#c9c7c1;padding:46px 0;text-align:center;font-size:.9rem}
+footer .brand{color:#fff;font-size:1.2rem;margin-bottom:8px}
+footer a:hover{color:var(--lavanda-soft)}
+
+/* ============================================================
+   RESPONSIVE (mobile)
+   ============================================================ */
+@media(max-width:860px){
+  .menu{
+    position:fixed;top:74px;left:0;right:0;
+    background:var(--crema);flex-direction:column;gap:0;
+    padding:10px 0;border-bottom:1px solid var(--crema-dk);
+    transform:translateY(-130%);transition:.3s;
+  }
+  .menu.open{transform:translateY(0)}
+  .menu>li{width:100%;text-align:center}
+  .menu>li>a{display:block;padding:14px}
+  .sub{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:0;background:transparent;padding:0 0 8px}
+  .has-sub:hover .sub{top:auto}
+  .burger{display:block}
+  .idea-grid,.cont-grid{grid-template-columns:1fr;gap:38px}
+  .exp-grid{grid-template-columns:1fr}
+  .host-block,.host-block.flip{grid-template-columns:1fr}
+  .host-block.flip .host-media{order:0}
+  .host-body{padding:40px 30px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- ====================== NAVIGAZIONE ====================== -->
+<header>
+  <nav class="wrap nav">
+    <a href="#home" class="brand">Lavanda <span>e</span> Rosmarino</a>
+    <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <ul class="menu" id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#idea">L'idea</a></li>
+      <li class="has-sub">
+        <a href="#ospitalita">L'ospitalità ▾</a>
+        <ul class="sub">
+          <li class="green"><a href="#green"><span class="tag">Green · nel verde</span>Le case di Pietrabruna</a></li>
+          <li class="blue"><a href="#blue"><span class="tag">Blue · sul mare</span>Le case di San Lorenzo</a></li>
+        </ul>
+      </li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<section id="home" class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Agriturismo diffuso · Liguria</p>
+    <h1>Dove la campagna<br>respira il <em>mare</em></h1>
+    <p>Casette tra gli ulivi di Pietrabruna e dimore affacciate sul mare di San Lorenzo. Un ritmo lento, biologico, fatto di orto, api e tempo per sé.</p>
+    <a href="#ospitalita" class="cta">Scopri le nostre case</a>
+  </div>
+</section>
+
+<!-- ====================== L'IDEA ====================== -->
+<section id="idea" class="idea">
+  <div class="wrap idea-grid">
+    <div class="idea-text">
+      <p class="eyebrow">L'idea</p>
+      <h2>Due paesaggi, <em>una stessa cura</em></h2>
+      <p>Lavanda e Rosmarino nasce dal desiderio di abitare la Liguria com'era: la terra fra le fasce di ulivi a Pietrabruna, e il respiro salato del mare a San Lorenzo. Due luoghi, un'unica filosofia di ospitalità.</p>
+      <p>Coltiviamo biologico, raccogliamo il miele delle nostre api, apparecchiamo gli aperitivi nell'orto. Qui il benessere non è un servizio: è il modo naturale di passare le giornate.</p>
+      <p>Ogni casa è pensata per rallentare — pochi ospiti, molto silenzio, e tutto il tempo per ritrovarsi.</p>
+    </div>
+    <!-- IMMAGINE: carica un file chiamato idea.jpg (es. l'orto, la lavanda, un dettaglio della casa) -->
+    <div class="idea-img" role="img" aria-label="L'orto e la campagna di Pietrabruna"></div>
+  </div>
+</section>
+
+<!-- ====================== ESPERIENZE / BENESSERE ====================== -->
+<section id="esperienze">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Esperienze · Benessere</p>
+      <h2>Il buono che si vive ogni giorno</h2>
+      <p>Esperienze salutistiche pensate per chi cerca un soggiorno autentico, lento e genuino.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="icon">🐝</div>
+        <h3>Api e miele</h3>
+        <p>Visite agli alveari e assaggi del nostro miele biologico, dalla fioritura della lavanda al millefiori.</p>
+      </div>
+      <div class="exp-card">
+        <div class="icon">🥂</div>
+        <h3>Aperitivi nell'orto</h3>
+        <p>Al tramonto, fra le erbe aromatiche: prodotti della nostra terra e vini del territorio ligure.</p>
+      </div>
+      <div class="exp-card">
+        <div class="icon">🌿</div>
+        <h3>Degustazioni</h3>
+        <p>Olio, miele, erbe e conserve: percorsi di gusto che raccontano Pietrabruna e il suo entroterra.</p>
+      </div>
+      <div class="exp-card">
+        <div class="icon">🧘</div>
+        <h3>Benessere lento</h3>
+        <p>Pratiche all'aperto, passeggiate fra gli ulivi e momenti di quiete, lontano dalla fretta.</p>
+      </div>
+      <div class="exp-card">
+        <div class="icon">🌱</div>
+        <h3>Orto biologico</h3>
+        <p>Raccolta in stagione e cucina con ciò che la terra offre, secondo natura.</p>
+      </div>
+      <div class="exp-card">
+        <div class="icon">🌊</div>
+        <h3>Mare e relax</h3>
+        <p>A San Lorenzo al Mare, le giornate scorrono fra spiaggia, pista ciclabile e tramonti sull'acqua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== OSPITALITÀ: GREEN & BLUE ====================== -->
+<section id="ospitalita" class="host">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">L'ospitalità</p>
+      <h2>Scegli il tuo paesaggio</h2>
+      <p>Due anime dello stesso soggiorno: il verde della campagna o il blu del mare.</p>
+    </div>
+
+    <!-- GREEN -->
+    <div id="green" class="host-block green">
+      <!-- IMMAGINE: carica green.jpg (le casette nel verde a Pietrabruna) -->
+      <div class="host-media" role="img" aria-label="Le case nel verde di Pietrabruna"></div>
+      <div class="host-body">
+        <span class="label">Green · nel verde</span>
+        <h3>Le case di Pietrabruna</h3>
+        <p>Casette immerse fra ulivi e fasce di campagna, nel cuore dell'entroterra ligure. Risvegli fra il profumo di rosmarino, l'orto a pochi passi e il silenzio delle colline.</p>
+        <ul>
+          <li>Orto e degustazioni</li>
+          <li>Api e miele</li>
+          <li>Aperitivi al tramonto</li>
+          <li>Quiete totale</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BLUE -->
+    <div id="blue" class="host-block blue flip">
+      <!-- IMMAGINE: carica blue.jpg (le case sul mare a San Lorenzo al Mare) -->
+      <div class="host-media" role="img" aria-label="Le case sul mare di San Lorenzo al Mare"></div>
+      <div class="host-body">
+        <span class="label">Blue · sul mare</span>
+        <h3>Le case di San Lorenzo al Mare</h3>
+        <p>Dimore affacciate sul Mar Ligure, a un soffio dalla spiaggia e dalla celebre pista ciclabile. Luce, salsedine e il ritmo dolce della riviera.</p>
+        <ul>
+          <li>Vista mare</li>
+          <li>Spiaggia vicina</li>
+          <li>Pista ciclabile</li>
+          <li>Tramonti sull'acqua</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CONTATTI ====================== -->
+<section id="contatti" class="contatti">
+  <div class="wrap">
+    <p class="eyebrow">Contatti</p>
+    <h2>Vieni a trovarci</h2>
+    <div class="cont-grid">
+
+      <!-- MODULO CONTATTI -->
+      <!-- NOTA: per far funzionare l'invio servirà un servizio gratuito tipo Formspree.
+           Sostituisci l'indirizzo qui sotto (action="...") con quello che ti darà Formspree.
+           Te lo spiego appena pubblichi il sito. -->
+      <form class="cont-form" action="https://formspree.io/f/IL-TUO-CODICE" method="POST">
+        <div class="form-field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="msg">Messaggio</label>
+          <textarea id="msg" name="messaggio" placeholder="Periodo, numero di ospiti, quale casa ti interessa..." required></textarea>
+        </div>
+        <button type="submit" class="send">Invia richiesta</button>
+      </form>
+
+      <!-- INFO + MAPPA -->
+      <div class="cont-info">
+        <p><strong>Green · Pietrabruna</strong>Entroterra di Imperia, Liguria</p>
+        <p><strong>Blue · San Lorenzo al Mare</strong>Riviera dei Fiori, Liguria</p>
+        <p><strong>Email</strong>info@lavandaerosmarino.it &nbsp;<em>(da personalizzare)</em></p>
+        <p><strong>Telefono</strong>+39 ___ _______ &nbsp;<em>(da inserire)</em></p>
+
+        <!-- MAPPA: mostra la zona fra Pietrabruna e San Lorenzo al Mare -->
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps?q=Pietrabruna,+Imperia,+Liguria&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Mappa zona Pietrabruna e San Lorenzo al Mare"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer>
+  <div class="wrap">
+    <div class="brand">Lavanda e Rosmarino</div>
+    <p>Agriturismo diffuso · Pietrabruna &amp; San Lorenzo al Mare, Liguria</p>
+    <p style="margin-top:8px;opacity:.7">© 2026 Lavanda e Rosmarino — Tutti i diritti riservati</p>
+  </div>
+</footer>
+
+<script>
+/* chiude il menu mobile dopo aver cliccato una voce */
+document.querySelectorAll('#menu a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('menu').classList.remove('open');
+  });
+});
+</script>
+
+</body>
+</html>
