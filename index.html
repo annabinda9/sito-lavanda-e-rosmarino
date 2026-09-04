@@ -28,7 +28,7 @@
 <!-- Dati strutturati per Google -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+"@context": "https://schema.org",
   "@type": "LodgingBusiness",
   "name": "Lavanda e Rosmarino",
   "image": "https://lavandaerosmarino.it/immagini/hero.jpg",
@@ -62,7 +62,7 @@
   --lavanda:      #8b7aa8;   /* viola tenue */
   --lavanda-soft: #d8cfe4;
   --rosmarino:    #6b7d63;   /* verde salvia */
-  --rosmarino-dk: #4a5743;
+ --rosmarino-dk: #4a5743;
   --crema:        #f6f4ee;   /* sfondo caldo */
   --crema-dk:     #ece8dd;
   --inchiostro:   #2f2e2b;   /* testo */
@@ -240,7 +240,7 @@ footer a:hover{color:var(--lavanda-soft)}
    ============================================================ */
 @media(max-width:860px){
   .menu{
-    position:fixed;top:74px;left:0;right:0;
+ position:fixed;top:74px;left:0;right:0;
     background:var(--crema);flex-direction:column;gap:0;
     padding:10px 0;border-bottom:1px solid var(--crema-dk);
     transform:translateY(-130%);transition:.3s;
@@ -277,6 +277,12 @@ footer a:hover{color:var(--lavanda-soft)}
           <li class="blue"><a href="#blue"><span class="tag">Blue · sul mare</span>Le case di San Lorenzo</a></li>
         </ul>
       </li>
+      <!-- NUOVE VOCI DI MENU richieste dalla cliente: le pagine/sezioni collegate
+           vanno ancora create (mancano testi e materiale). Per ora i link
+           puntano ad ancore vuote in fondo alla pagina, da completare. -->
+      <li><a href="#link-utili">Link utili</a></li>
+      <li><a href="#cosa-vedere">C'è da vedere</a></li>
+      <li><a href="#eventi">Eventi da non perdere</a></li>
       <li><a href="#contatti">Contatti</a></li>
     </ul>
   </nav>
@@ -288,7 +294,7 @@ footer a:hover{color:var(--lavanda-soft)}
     <p class="eyebrow">Agriturismo diffuso · Liguria</p>
     <h1>Dove la campagna<br>respira il <em>mare</em></h1>
     <p>Casette tra gli ulivi di Pietrabruna e dimore affacciate sul mare di San Lorenzo. Un ritmo lento, biologico, fatto di orto, api e tempo per sé.</p>
-    <a href="#ospitalita" class="cta">Scopri le nostre case</a>
+    <a href="#ospitalita" class="cta">Scopri il nostro progetto</a>
   </div>
 </section>
 
@@ -297,10 +303,12 @@ footer a:hover{color:var(--lavanda-soft)}
   <div class="wrap idea-grid">
     <div class="idea-text">
       <p class="eyebrow">Coltiviamo come i nostri nonni</p>
-      <h2>Due paesaggi, <em>una stessa cura</em></h2>
-      <p>Lavanda e Rosmarino nasce dal desiderio di abitare la Liguria com'era: la terra fra le fasce di ulivi a Pietrabruna, e il respiro salato del mare a San Lorenzo. Due luoghi, un'unica filosofia di ospitalità.</p>
-      <p>Coltiviamo biologico, raccogliamo il miele delle nostre api, apparecchiamo gli aperitivi nell'orto. Qui il benessere non è un servizio: è il modo naturale di passare le giornate.</p>
-      <p>Ogni casa è pensata per rallentare — pochi ospiti, molto silenzio, e tutto il tempo per ritrovarsi.</p>
+      <h2>Scopri il nostro <em>progetto</em></h2>
+      <p>Respirare il mare, ma anche la collina. La possibilità di scegliere il proprio luogo magico: il mare, con la sua straordinaria energia; la collina con i suoi silenzi e le frequenze di Madre Terra.</p>
+      <p>Un'idea che nasce silenziosa e che anno dopo anno cresce prendendo la forma di un'ospitalità diffusa nel segno della tradizione.</p>
+      <p>Prima la ristrutturazione della casa di famiglia, la riscoperta della pietra, di nicchie insospettate in un progetto che nel rispetto di ciò che era accoglie gli ospiti con tutte le comodità dell'oggi.</p>
+      <p>Poi il recupero di un terreno appartenuto ai nonni, trasformato in un'azienda agricola che strizza l'occhio al coltivar tipico ligure: ulivi, erbe officinali, lavanda ma anche un roseto e un frutteto per deliziose conserve o distillati. Su tutto un grande orto che permette di accogliere gli ospiti con il cesto del contadino: squisitezze a km zero.</p>
+      <p>L'ultimo passo — ma sarà davvero l'ultimo? — il recupero delle antiche case contadine per dar forma a un vero e proprio agriturismo. Oggi poco più di ruderi in pietra, domani accoglienti strutture senza barriere architettoniche dove trascorrere giornate immersi in un anfiteatro verde affacciato sul mare che dista pochi km…</p>
     </div>
     <!-- IMMAGINE: carica un file chiamato idea.jpg (es. l'orto, la lavanda, un dettaglio della casa) -->
     <div class="idea-img" role="img" aria-label="L'orto e la campagna di Pietrabruna"></div>
@@ -315,36 +323,36 @@ footer a:hover{color:var(--lavanda-soft)}
       <h2>Il buono che si vive ogni giorno</h2>
       <p>Esperienze salutistiche pensate per chi cerca un soggiorno autentico, lento e genuino.</p>
     </div>
-    <div class="exp-grid">
+ <div class="exp-grid">
       <div class="exp-card">
-        <div class="icon">🐝</div>
-        <h3>Api e miele</h3>
-        <p>Visite agli alveari e assaggi del nostro miele biologico, dalla fioritura della lavanda al millefiori.</p>
+        <div class="icon">🏡</div>
+        <h3>Scopri le nostre dimore</h3>
+        <p>A pochi metri dal mare o immerse nel verde: scopri dove trascorrere la tua vacanza e personalizzala con tutte le nostre proposte.</p>
       </div>
       <div class="exp-card">
-        <div class="icon">🥂</div>
-        <h3>Aperitivi nell'orto</h3>
-        <p>Al tramonto, fra le erbe aromatiche: prodotti della nostra terra e vini del territorio ligure.</p>
-      </div>
-      <div class="exp-card">
-        <div class="icon">🌿</div>
-        <h3>Degustazioni</h3>
-        <p>Olio, miele, erbe e conserve: percorsi di gusto che raccontano Pietrabruna e il suo entroterra.</p>
-      </div>
-   <div class="exp-card">
         <div class="icon">🧘</div>
-        <h3>Benessere lento</h3>
-        <p>Pratiche olistiche, massaggi e riflessologia plantare con oli essenziali, passeggiate fra gli ulivi e momenti di quiete, lontano dalla fretta.</p>
+        <h3>Benessere Lento</h3>
+        <p>Pratiche olistiche, energetiche in un ambiente incontaminato e rigenerante, lontano dalla fretta per ricaricare le energie.</p>
+      </div>
+      <div class="exp-card">
+        <div class="icon">📅</div>
+        <h3>Settimane e week end a tema</h3>
+        <p>Seguiteci per scoprire quando organizzeremo settimane e week end a tema: trekking alla scoperta di luoghi storici della Valle del San Lorenzo, Yoga o Fitness con istruttori qualificati, ma anche giornate per scoprire come i nostri nonni sbattevano e raccoglievano le olive per produrre l'olio extravergine di oliva taggiasca, o come veniva distillata la lavanda appena raccolta…</p>
       </div>
       <div class="exp-card">
         <div class="icon">🌱</div>
         <h3>Il cesto del contadino</h3>
-        <p>Raccolta in stagione e cucina con ciò che la terra offre, secondo natura.</p>
+        <p>Se scegli la campagna, ma anche se scegli il mare potrai ricevere il cesto del contadino: ciò che la terra offre secondo la stagione e la natura.</p>
       </div>
       <div class="exp-card">
-        <div class="icon">🌊</div>
-        <h3>Mare e relax</h3>
-        <p>A San Lorenzo al Mare, le giornate scorrono fra spiaggia, pista ciclabile e tramonti sull'acqua.</p>
+        <div class="icon">🥂</div>
+        <h3>Aperitivi nell'orto e degustazioni</h3>
+        <p>Al tramonto, fra le erbe aromatiche o durante la fioritura della lavanda è possibile degustare i prodotti della terra, così come raccolti oppure come conservati secondo le ricette dei nostri nonni, accompagnati con i vini del territorio ligure.</p>
+      </div>
+      <div class="exp-card">
+        <div class="icon">🐝</div>
+ <h3>Piccole e instancabili: le nostre api</h3>
+        <p>Visita in sicurezza il nostro alveare, assaggia il nostro miele dal gusto unico. Ne sentirai il bosco, le fioriture delle diverse stagioni: un tuffo nella natura nel suo aspetto più dolce.</p>
       </div>
     </div>
   </div>
@@ -359,41 +367,68 @@ footer a:hover{color:var(--lavanda-soft)}
       <p>Due anime dello stesso soggiorno: il verde della campagna o il blu del mare.</p>
     </div>
 
-    <!-- GREEN -->
-    <div id="green" class="host-block green">
-      <!-- IMMAGINE: carica green.jpg (le casette nel verde a Pietrabruna) -->
-      <div class="host-media" role="img" aria-label="Le case nel verde di Pietrabruna"></div>
-      <div class="host-body">
-        <span class="label">Green · nel verde</span>
-        <h3>Le case di Pietrabruna</h3>
-        <p>Casette immerse fra ulivi e fasce di campagna, nel cuore dell'entroterra ligure. Risvegli fra il profumo di rosmarino, l'orto a pochi passi e il silenzio delle colline.</p>
-        <ul>
-          <li>Orto e degustazioni</li>
-          <li>Api e miele</li>
-          <li>Aperitivi al tramonto</li>
-          <li>Quiete totale</li>
-        </ul>
-      </div>
-    </div>
-
     <!-- BLUE -->
-    <div id="blue" class="host-block blue flip">
+    <div id="blue" class="host-block blue">
       <!-- IMMAGINE: carica blue.jpg (le case sul mare a San Lorenzo al Mare) -->
       <div class="host-media" role="img" aria-label="Le case sul mare di San Lorenzo al Mare"></div>
       <div class="host-body">
         <span class="label">Blue · sul mare</span>
-        <h3>Le case di San Lorenzo al Mare</h3>
-        <p>Dimore affacciate sul Mar Ligure, a un soffio dalla spiaggia e dalla celebre pista ciclabile. Luce, salsedine e il ritmo dolce della riviera.</p>
+        <h3>Le pietre di San Lorenzo al Mare…</h3>
+        <p>Dimore di recente ristrutturazione, accoglienti e dotate di ogni confort, a un soffio dalla spiaggia e dalla celebre pista ciclabile che si snoda da Ospedaletti ad Andora su un percorso di circa 45 km, da percorrere sull'ex tracciato della ferrovia interamente affacciato sul mare. Estate e inverno, luce, salsedine e il ritmo dolce della Riviera Ligure di Ponente.</p>
         <ul>
-          <li>Vista mare</li>
-          <li>Spiaggia vicina</li>
-          <li>Pista ciclabile</li>
-          <li>Tramonti sull'acqua</li>
+          <li>#VistaMare</li>
+          <li>#APochiMetriDallaSpiaggia</li>
+          <li>#PistaCiclabile</li>
+          <li>#BenessereLento</li>
+          <li>#CestoDelContadino</li>
+        </ul>
+ </div>
+    </div>
+
+    <!-- GREEN -->
+    <div id="green" class="host-block green flip">
+      <!-- IMMAGINE: carica green.jpg (le casette nel verde a Pietrabruna) -->
+      <div class="host-media" role="img" aria-label="Le case nel verde di Pietrabruna"></div>
+      <div class="host-body">
+        <span class="label">Green · nel verde</span>
+        <h3>…e quelle di Pietrabruna</h3>
+        <p>Una vera sfida architettonica il recupero di queste casette in pietra, vestigia di un modo di costruire che non è più, immerse nel verde in un anfiteatro naturale che si affaccia sulla Valle del San Lorenzo con una vista ampia che giunge fino al mare… Risvegli fra il profumo di rose, lavanda e rosmarini… nel rumoroso silenzio della natura.</p>
+        <ul>
+          <li>#DegustazioniEAperitiviAlTramonto</li>
+          <li>#QuieteTotale</li>
+          <li>#BenessereLento</li>
+          <li>#Trekking</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ====================== LINK UTILI / C'È DA VEDERE / EVENTI ======================
+     Sezioni segnaposto per le nuove voci di menu richieste dalla cliente.
+     Da completare con testi e materiale non appena disponibili. -->
+<section id="link-utili" style="padding:70px 0">
+  <div class="wrap">
+    <p class="eyebrow">Link utili</p>
+    <h2 style="font-size:2rem;margin:.25em 0 .3em">Contenuti in arrivo</h2>
+    <p style="color:#54534f">Sezione in preparazione.</p>
+  </div>
+</section>
+<section id="cosa-vedere" style="padding:70px 0;background:var(--crema-dk)">
+  <div class="wrap">
+    <p class="eyebrow">C'è da vedere</p>
+    <h2 style="font-size:2rem;margin:.25em 0 .3em">Contenuti in arrivo</h2>
+    <p style="color:#54534f">Sezione in preparazione.</p>
+  </div>
+</section>
+<section id="eventi" style="padding:70px 0">
+  <div class="wrap">
+    <p class="eyebrow">Eventi da non perdere</p>
+    <h2 style="font-size:2rem;margin:.25em 0 .3em">Contenuti in arrivo</h2>
+    <p style="color:#54534f">Sezione in preparazione.</p>
+  </div>
+</section>
+
   <!-- ====================== INSTAGRAM ====================== -->
 <section id="instagram" style="padding:100px 0;background:var(--crema)">
   <div class="wrap" style="text-align:center;max-width:900px;margin:0 auto">
@@ -404,7 +439,7 @@ footer a:hover{color:var(--lavanda-soft)}
     </p>
     <div style="border-radius:18px;overflow:hidden;box-shadow:0 18px 44px rgba(47,46,43,.10);max-width:765px;margin:0 auto">
       <iframe src="https://snapwidget.com/embed/1126845" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:510px" title="Posts from Instagram"></iframe>
-    </div>
+</div>
   </div>
 </section>
 
@@ -453,8 +488,7 @@ footer a:hover{color:var(--lavanda-soft)}
         </div>
         <button type="submit" class="send">Invia richiesta</button>
       </form>
-
-      <!-- INFO + MAPPA -->
+<!-- INFO + MAPPA -->
       <div class="cont-info">
         <p><strong>Green · Pietrabruna</strong>Strada Monte Faudo, snc — 18020 Pietrabruna (IM)</p>
 <p><strong>Blue · San Lorenzo al Mare</strong>Via Cristoforo Colombo 42 — 18017 San Lorenzo al Mare (IM)</p>
